@@ -1,0 +1,3 @@
+rootProject.name = 'igniteCouplesUp2'
+
+include ':app'
