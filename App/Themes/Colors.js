@@ -1,4 +1,6 @@
 const colors = {
+  tabIconSelected: '#2f95dc',
+  tabIconDefault: '#ccc',
   background: '#1F0808',
   clear: 'rgba(0,0,0,0)',
   facebook: '#3b5998',

@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
-import { ScrollView, Text, Image, View } from 'react-native'
+import { ScrollView, Text, Image, View, Button } from 'react-native'
 import { Images } from '../Themes'
 
 // Styles
 import styles from './Styles/LaunchScreenStyles'
 
 export default class LaunchScreen extends Component {
+
+  _submithandle = () => {
+    this.props.navigation.navigate('LoginScreen')
+  }
+
   render () {
     return (
       <View style={styles.mainContainer}>
@@ -18,8 +23,14 @@ export default class LaunchScreen extends Component {
           <View style={styles.section} >
             <Image source={Images.ready} />
             <Text style={styles.sectionText}>
-              This probably isn't what your app is going to look like. Unless your designer handed you this screen and, in that case, congrats! You're ready to ship. For everyone else, this is where you'll see a live preview of your fully functioning app using Ignite.
+            Our goal is to create a digital presence that promotes the community and relationships thru Coupld Up’s digital marketing platform.
             </Text>
+            <Button
+            onPress={this._submithandle}
+            title="Learn More"
+            color="#841584"
+            accessibilityLabel="Learn more about this purple button"
+            />
           </View>
 
         </ScrollView>
