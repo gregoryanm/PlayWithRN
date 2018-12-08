@@ -1,102 +1,64 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types';
+import React, {Component} from 'react';
 import {
-  AppRegistry,
-  StyleSheet,
-  Text, Platform,
-  View,ScrollView,TouchableHighlight, Modal
+    AppRegistry,
+    Button,
+    View,
+    Text,
+    TextInput,
+    Platform,
+    Switch,
+    TouchableHighlight
 } from 'react-native';
+import PropTypes from 'prop-types';
+import {options} from './Templates'
+import t from 'tcomb-form-native'
 
-import { Form, InputField,Separator } from 'react-native-form-generator'
-import { Icon } from 'expo'
+import styles from './Styles/ResetStyle';
 
-export default class FormView extends React.Component{
+const Form = t.form.Form;
 
+const Reset = t.struct({
+    email: t.String
+});
 
-  
-  // Prop type warnings
-  // static propTypes = {
-  //   someProperty: PropTypes.object,
-  //   someSetting: PropTypes.bool.isRequired,
-  // }
-  //
-  // // Defaults for props
-  // static defaultProps = {
-  //   someSetting: false
-  // }
-
-
-
-  constructor(props){
-    super(props);
-    this.state = {
-      formData:{}
-    }
-  }
-     
-    // this.setState({formData: formData})
-    // this.props.onFormChange && this.props.onFormChange(formData);
-  
-
-  handleFormFocus(event, reactNode){
-  
- }
-
- handleFormChange(formData){
-  //formData will be a json object that will contain
-  // refs of every field
-  // console.warn(formData.first_name)
-  // formData.last_name
-}
-
-  openTermsAndConditionsURL(){
-  }
-
-  resetForm(){
-    this.refs.registrationForm.refs.first_name.setValue("");
-    this.refs.registrationForm.refs.last_name.setValue("");
-    this.refs.registrationForm.refs.other_input.setValue("");
-    this.refs.registrationForm.refs.meeting.setDate(new Date());
-    this.refs.registrationForm.refs.has_accepted_conditions.setValue(false);
-
-  }
-
-  render(){
-    let formStyles = StyleSheet.create({
-      alignRight:{
-        marginTop: 7, position:'absolute', right: 10, color:'white'
-      }
-    });
-    return (
-    
-      <Form
-      ref='registrationForm'
-      onFocus={this.handleFormFocus.bind(this)}
-      onChange={this.handleFormChange.bind(this)}
-      label="Personal Information">
-      <InputField 
-       style={{color: 'white'}}
-           ref='first_name' 
-          //  label='First Name' 
-           placeholder='Email Address'
-           iconRight={
-            <Icon.Ionicons        
-            name={
-              Platform.OS === 'ios' ? 'ios-mail' : 'md-mail'
-            }           
-            value={this.state.value} 
-            size={30}  
-            style={[
-              formStyles.alignRight,{color: '#C7C7CC'},
-              this.props.iconStyle]}/>
+export default class SignupView extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: {}
         }
-           />      
-     <Separator/>
-</Form>
-
-      );
-
+        this.onChange = this
+            .onChange
+            .bind(this);
     }
 
-  }
-  
+    handleSubmit = () => {
+        const value = this
+            ._form
+            .getValue() // use that ref to get the form value
+        console.log(value)
+    }
+
+    onChange(value) {
+        this.setState({value})
+    }
+
+    render() {
+        return (
+            <View style={styles.container}>
+                <Form ref={c => this._form = c} // assign a ref
+                    type={Reset} options={options} value={this.state.value} onChange={this.onChange}/>
+
+                <TouchableHighlight
+                    style={styles.buttonLogin}
+                    onPress={this.handleSubmit}
+                    underlayColor='#99d9f4'>
+                    <Text style={styles.buttonText}>Reset Password</Text>
+                </TouchableHighlight>
+
+
+            </View>
+        )
+    }
+
+}

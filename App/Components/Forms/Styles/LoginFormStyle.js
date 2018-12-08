@@ -14,7 +14,7 @@ export default StyleSheet.create({
     backgroundColor: '#922092',
     borderColor: '#922092',
     borderWidth: 1,
-    borderRadius: 15,
+    borderRadius: 8,
     marginBottom: 10,
     alignSelf: 'stretch',
     justifyContent: 'center'

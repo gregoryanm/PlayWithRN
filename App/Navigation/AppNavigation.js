@@ -15,6 +15,12 @@ import MainScreen from '../Containers/MainScreen'
 import ExploreScreen from '../Containers/ExploreScreen'
 import SettingsScreen from '../Containers/SettingsScreen'
 
+//Test
+import ListviewExampleScreen from '../Containers/ListviewExample'
+import ListviewGridExampleScreen from '../Containers/ListviewGridExample' //movies
+import ListviewSectionsExampleScreen from '../Containers/ListviewSectionsExample'
+
+
 import styles from './Styles/NavigationStyles'
 
 // Manifest of possible screens
@@ -27,10 +33,13 @@ const PrimaryNav = createStackNavigator({
   ExploreScreen: { screen: ExploreScreen },  
   SettingsScreen: { screen: SettingsScreen },
   ModalScreen: { screen: ModalScreen },
+  ListviewExampleScreen: { screen: ListviewExampleScreen },
+  ListviewGridExampleScreen: { screen: ListviewGridExampleScreen },
+  ListviewSectionsExampleScreen: { screen: ListviewSectionsExampleScreen },
 }, {
   // Default config for all screens
   headerMode: 'none',
-  initialRouteName: 'LoginScreen',
+  initialRouteName: 'ListviewGridExampleScreen',
   navigationOptions: {
     headerStyle: styles.header
   }

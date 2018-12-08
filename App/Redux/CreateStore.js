@@ -1,7 +1,10 @@
 import { createStore, applyMiddleware, compose } from 'redux'
+import ReduxPersist from '../Config/ReduxPersist'
+import { persistStore } from "redux-persist";
 import Config from '../Config/DebugConfig'
 import createSagaMiddleware from 'redux-saga'
 import ScreenTracking from './ScreenTrackingMiddleware'
+// import { createReactNavigationReduxMiddleware } from 'react-navigation-redux-helpers'
 
 // creates the store
 export default (rootReducer, rootSaga) => {
@@ -27,12 +30,16 @@ export default (rootReducer, rootSaga) => {
   const createAppropriateStore = Config.useReactotron ? console.tron.createStore : createStore
   const store = createAppropriateStore(rootReducer, compose(...enhancers))
 
+  const persistor = persistStore(store);
+
+
   // kick off root saga
   let sagasManager = sagaMiddleware.run(rootSaga)
 
   return {
+    persistor,
     store,
     sagasManager,
     sagaMiddleware
-  }
+  } //old per v5 added persistor
 }

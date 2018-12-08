@@ -2,7 +2,9 @@
 import apisauce from 'apisauce'
 
 // our "constructor"
-const create = (baseURL = 'https://api.github.com/') => {
+// const create = (baseURL = 'https://api.github.com/') => {
+  const create = (baseURL = 'https://api.themoviedb.org/3/') => {
+
   // ------
   // STEP 1
   // ------
@@ -20,6 +22,12 @@ const create = (baseURL = 'https://api.github.com/') => {
     timeout: 10000
   })
 
+    // Wrap api's addMonitor to allow the calling code to attach
+  // additional monitors in the future.  But only in __DEV__ and only
+  // if we've attached Reactotron to console (it isn't during unit tests).
+  if (__DEV__ && console.tron) {
+    api.addMonitor(console.tron.apisauce)
+  }
   // ------
   // STEP 2
   // ------
@@ -37,6 +45,7 @@ const create = (baseURL = 'https://api.github.com/') => {
   const getRoot = () => api.get('')
   const getRate = () => api.get('rate_limit')
   const getUser = (username) => api.get('search/users', {q: username})
+  const getPopular = () => api.get('movie/popular', { api_key: 'cf73a59652c9a9806c06af8a6295e3a3' })
 
   // ------
   // STEP 3
@@ -52,6 +61,7 @@ const create = (baseURL = 'https://api.github.com/') => {
   //
   return {
     // a list of the API functions from step 2
+    getPopular,
     getRoot,
     getRate,
     getUser

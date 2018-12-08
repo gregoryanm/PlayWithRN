@@ -6601,6 +6601,11 @@ ignite-radio-buttons@^0.0.2:
   resolved "https://registry.yarnpkg.com/ignite-radio-buttons/-/ignite-radio-buttons-0.0.2.tgz#4caa56c5cfa0fe54214858291e71d544bfd7a3be"
   integrity sha1-TKpWxc+g/lQhSFgpHnHVRL/Xo74=
 
+ignite-redux-persist@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/ignite-redux-persist/-/ignite-redux-persist-1.1.0.tgz#c9306266e7672d60e528aa623fe6d6cab834a22b"
+  integrity sha512-eYYw5pTLRb5l5WY0Bmif5fp0fub+c3JnBPsIJUPPsvebLIFvRWzIm7Bgff+YXkATRCgzhCElXGZnbkZlonVGyA==
+
 ignite-tab-view@^0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/ignite-tab-view/-/ignite-tab-view-0.0.1.tgz#cadc59f71c3974787d7a72d723d5b23f445bb709"
@@ -10760,10 +10765,10 @@ ramda@^0.24.1:
   resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.24.1.tgz#c3b7755197f35b8dc3502228262c4c91ddb6b857"
   integrity sha1-w7d1UZfzW43DUCIoJixMkd22uFc=
 
-ramda@^0.25.0:
-  version "0.25.0"
-  resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.25.0.tgz#8fdf68231cffa90bc2f9460390a0cb74a29b29a9"
-  integrity sha512-GXpfrYVPwx3K7RQ6aYT8KPS8XViSXUVJT1ONhoKPE9VAleW42YE+U+8VEyGWt41EnEQW7gwecYJriTI0pKoecQ==
+ramda@^0.26.1:
+  version "0.26.1"
+  resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.26.1.tgz#8d41351eb8111c55353617fc3bbffad8e4d35d06"
+  integrity sha512-hLWjpy7EnsDBb0p+Z3B7rPi3GDeRG5ZtiI33kJhTt+ORCd38AbAIjB/9zRIUoeTbE/AVX5ZkU7m6bznsvrf8eQ==
 
 ramdasauce@^2.0.0:
   version "2.1.0"
@@ -11579,6 +11584,11 @@ redux-logger@^2.7.4:
   dependencies:
     deep-diff "0.3.4"
 
+redux-persist@5.4.0:
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/redux-persist/-/redux-persist-5.4.0.tgz#a1062313546a9d4ca6f9271464d18f736e8ca394"
+  integrity sha512-Ohp7g5WRx2rDyDk/bKKCgbD3ES6ahGPWxFEp3QPx2opwst0jJEbZKigZtQewUeJZnomN/7Zo3QglPDOZ6EdYEw==
+
 redux-saga@^0.15.3:
   version "0.15.6"
   resolved "https://registry.yarnpkg.com/redux-saga/-/redux-saga-0.15.6.tgz#8638dc522de6c6c0a496fe8b2b5466287ac2dc4d"
@@ -12051,7 +12061,7 @@ schema-utils@^0.4.0, schema-utils@^0.4.5:
     ajv "^6.1.0"
     ajv-keywords "^3.1.0"
 
-seamless-immutable@^7.1.2:
+seamless-immutable@^7.1.4:
   version "7.1.4"
   resolved "https://registry.yarnpkg.com/seamless-immutable/-/seamless-immutable-7.1.4.tgz#6e9536def083ddc4dea0207d722e0e80d0f372f8"
   integrity sha512-XiUO1QP4ki4E2PHegiGAlu6r82o5A+6tRh7IkGGTVg/h+UoeX4nFBeCGPOhb4CYjvkqsfm/TUtvOMYC1xmV30A==

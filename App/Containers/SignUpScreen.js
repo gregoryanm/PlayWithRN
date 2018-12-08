@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { Images } from '../Themes'
 // Add Actions - replace 'Your' with whatever your reducer is called :)
 // import YourActions from '../Redux/YourRedux'
-// import SignUpForm from '../Components/Forms/SignUp'
+import SignUpForm from '../Components/Forms/SignUp'
 // Styles
 import styles from './Styles/SignUpScreenStyle'
 
@@ -27,21 +27,8 @@ class SignUpScreen extends Component {
       
 
           
-          {/* <SignUpForm/> */}
-      
-          <Button
-          onPress={this._submithandle}
-          title="Sign Up"
-          color="#841584"
-          accessibilityLabel="Learn more about this purple button"
-          />
-          <View style={{marginVertical: 3}}/>
-        <Button
-          onPress={this._submithandle}
-          title="Sign up with Facebook"
-          color="#3B5998"
-          accessibilityLabel="Learn more about this purple button"
-          />     
+          <SignUpForm/>
+ 
         </View>
         <View style={styles.centered}>
         <TouchableOpacity
